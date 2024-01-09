@@ -1,0 +1,6 @@
+@IVP.VerificationService_HostAddress = http://localhost:5041
+
+GET {{IVP.VerificationService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
