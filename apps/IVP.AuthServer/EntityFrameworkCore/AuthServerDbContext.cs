@@ -80,6 +80,7 @@ public class AuthServerDbContext : AbpDbContext<AuthServerDbContext>,
         base.OnModelCreating(builder);
 
         builder.ConfigurePermissionManagement();
+        builder.ConfigureFeatureManagement();
         builder.ConfigureSettingManagement();
         builder.ConfigureAuditLogging();
         builder.ConfigureIdentity();
