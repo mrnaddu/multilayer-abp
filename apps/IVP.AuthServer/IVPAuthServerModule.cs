@@ -13,7 +13,7 @@ using Volo.Abp.Account.Web;
 using Volo.Abp.Application;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.AspNetCore.Mvc.UI.Bundling;
-using Volo.Abp.AspNetCore.Mvc.UI.Theme.Basic;
+using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
@@ -40,7 +40,6 @@ using Volo.Abp.Security.Claims;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.Swashbuckle;
-using Volo.Abp.TenantManagement;
 using Volo.Abp.Timing;
 using Volo.Abp.UI.Navigation.Urls;
 
@@ -62,7 +61,7 @@ namespace IVP.AuthServer;
     typeof(AbpPermissionManagementDomainIdentityModule),
     typeof(AbpPermissionManagementEntityFrameworkCoreModule),
     typeof(AbpPermissionManagementApplicationModule),
-    typeof(AbpAspNetCoreMvcUiBasicThemeModule),
+    typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
     typeof(AbpSettingManagementEntityFrameworkCoreModule),
     typeof(AbpSettingManagementApplicationModule),
     typeof(AbpSettingManagementHttpApiModule),
