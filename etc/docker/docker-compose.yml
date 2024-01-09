@@ -1,0 +1,60 @@
+version: "3.9"
+services:
+  rabbitmq:
+    container_name: rabbitmq
+    image: rabbitmq:management-alpine
+    healthcheck:
+        test: rabbitmq-diagnostics -q ping
+        interval: 30s
+        timeout: 30s
+        retries: 3
+    ports:
+      - 15672:15672
+      - 5672:5672
+
+  postgres-db:
+    container_name: postgres
+    image: postgres:14.1
+    volumes:
+      - postgres_data:/docker/data/postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5  
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: "Postgre@Db900"
+
+  seq:
+    image: datalust/seq:latest
+    container_name: seq
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - 5341:80
+    volumes:
+      - seq_data_container:/docker/data/seq
+    healthcheck:
+      interval: 30s
+      timeout: 30s
+      retries: 3  
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379
+    volumes:
+      - redis_data_container:/docker/data/redis
+    command: redis-server --appendonly yes
+
+volumes:
+  postgres_data:
+  redis_data_container:
+  seq_data_container:
+
+  

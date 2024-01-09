@@ -1,0 +1,70 @@
+# tye application configuration file
+# read all about it at https://github.com/dotnet/tye
+#
+# when you've given us a try, we'd love to know what you think:
+#    https://aka.ms/AA7q20u
+#
+name: ecosmart.onebill
+services:
+  - name: authserver
+    project: authserver/Onebill.AuthServer/Onebill.AuthServer.csproj
+    bindings:
+      - protocol: https
+        port: 10001
+  - name: identityservice
+    project: services/identity/src/Onebill.IdentityService.HttpApi.Host/Onebill.IdentityService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10002
+  - name: administrationservice
+    project: services/administration/src/Onebill.AdministrationService.HttpApi.Host/Onebill.AdministrationService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10003
+  - name: tenantservice
+    project: services/tenant/src/Onebill.TenantService.HttpApi.Host/Onebill.TenantService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10004
+  - name: billingservice
+    project: services/billing/src/Onebill.BillingService.HttpApi.Host/Onebill.BillingService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10005
+  - name: monitoringservice
+    project: services/monitoring/src/Onebill.MonitoringService.HttpApi.Host/Onebill.MonitoringService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10006
+  - name: datacollectionservice
+    project: services/datacollection/src/Onebill.DataCollectionService.HttpApi.Host/Onebill.DataCollectionService.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10007        
+  - name: bffservice
+    project: services/bff/src/OneBill.BFF.HttpApi.Host/OneBill.BFF.HttpApi.Host.csproj
+    bindings:
+      - protocol: https
+        port: 10008
+      
+
+ingress:
+  - name: gateway
+    bindings:
+      - protocol: https
+        port: 10000
+    rules:
+      - path: /identity
+        service: identityservice
+      - path: /admin
+        service: administrationservice
+      - path: /tenant
+        service: tenantservice
+      - path: /billing
+        service: billingservice
+      - path: /monitoring
+        service: monitoringservice
+      - path: /datacollection
+        service: datacollectionservice
+      - path: /bff
+        service: bffservice
