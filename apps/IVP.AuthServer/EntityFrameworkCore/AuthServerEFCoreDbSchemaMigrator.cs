@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IVP.AuthServer.Data;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.DependencyInjection;
 
 namespace IVP.AuthServer.EntityFrameworkCore;
 
-public class AuthServerEFCoreDbSchemaMigrator : ITransientDependency
+public class AuthServerEFCoreDbSchemaMigrator
+    : IIVPDbSchemaMigrator, ITransientDependency
 {
     private readonly IServiceProvider _serviceProvider;
 
