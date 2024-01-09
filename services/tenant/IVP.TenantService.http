@@ -1,6 +1,0 @@
-@IVP.TenantService_HostAddress = http://localhost:5278
-
-GET {{IVP.TenantService_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
