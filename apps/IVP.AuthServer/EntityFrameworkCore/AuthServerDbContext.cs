@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
@@ -18,11 +19,9 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
 namespace IVP.AuthServer.EntityFrameworkCore;
 
+[ReplaceDbContext(typeof(IIdentityDbContext))]
+[ReplaceDbContext(typeof(IOpenIddictDbContext))]
 public class AuthServerDbContext : AbpDbContext<AuthServerDbContext>,
-    IPermissionManagementDbContext,
-    ISettingManagementDbContext,
-    IFeatureManagementDbContext,
-    IAuditLoggingDbContext,
     IOpenIddictDbContext,
     IIdentityDbContext
 {
