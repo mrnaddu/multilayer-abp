@@ -1,5 +1,7 @@
 ﻿using IVP.AdministrationService.ApplicationContracts;
 using IVP.AdministrationService.EntityFrameworkCore;
+using IVP.AuthServer.ApplicationContracts;
+using IVP.AuthServer.EntityFrameworkCore;
 using IVP.TenantService.ApplicationContracts;
 using IVP.TenantService.EntityFrameworkCore;
 using IVP.VerificationService.ApplicationContracts;
@@ -11,8 +13,8 @@ namespace IVP.DbMigrator;
 
 [DependsOn(
     typeof(AbpAutofacModule),
-    typeof(IdentityServiceEntityFrameworkCoreModule),
-    typeof(IdentityServiceApplicationContractsModule),
+    typeof(AuthServerEntityFrameworkCoreModule),
+    typeof(AuthServerApplicationContractsModule),
     typeof(AdministrationServiceEntityFrameworkCoreModule),
     typeof(AdministrationServiceApplicationContractsModule),
     typeof(TenantServiceEntityFrameworkCoreModule),

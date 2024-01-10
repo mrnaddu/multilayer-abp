@@ -1,4 +1,4 @@
-﻿namespace IVP.AuthServer.EntityFrameworkCore;
+﻿namespace IVP.AuthServer.Domain;
 
 public static class AuthServerDbProperties
 {

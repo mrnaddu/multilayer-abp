@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IVP.AuthServer.Domain;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
@@ -18,8 +19,12 @@ namespace IVP.AuthServer.EntityFrameworkCore;
 [ConnectionStringName(AuthServerDbProperties.ConnectionStringName)]
 public class AuthServerDbContext : AbpDbContext<AuthServerDbContext>,
     IOpenIddictDbContext,
-    IIdentityDbContext
+    IIdentityDbContext,
+    IAuthServerDbContext
 {
+    /* Add DbSet for each Aggregate Root here. Example:
+    * public DbSet<Question> Questions { get; set; }
+    */
     public AuthServerDbContext(DbContextOptions<AuthServerDbContext> options)
         : base(options)
     {
@@ -44,5 +49,6 @@ public class AuthServerDbContext : AbpDbContext<AuthServerDbContext>,
 
         builder.ConfigureIdentity();
         builder.ConfigureOpenIddict();
+        builder.ConfigureAuthServer();
     }
 }

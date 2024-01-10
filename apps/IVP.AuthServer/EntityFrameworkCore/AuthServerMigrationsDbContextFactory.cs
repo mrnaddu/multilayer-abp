@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore;
+using IVP.AuthServer.Domain;
 
 namespace IVP.AuthServer.EntityFrameworkCore;
 
-public class AuthServerDbContextFactory : IDesignTimeDbContextFactory<AuthServerDbContext>
+public class AuthServerMigrationsDbContextFactory : IDesignTimeDbContextFactory<AuthServerDbContext>
 {
     public AuthServerDbContext CreateDbContext(string[] args)
     {

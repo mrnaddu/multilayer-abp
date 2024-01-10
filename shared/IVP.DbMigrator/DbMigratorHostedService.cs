@@ -1,6 +1,10 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using IVP.DbMigrator.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using Volo.Abp;
+using Volo.Abp.Data;
 
 namespace IVP.DbMigrator;
 
@@ -29,7 +33,7 @@ public class DbMigratorHostedService : IHostedService
 
             await application
                 .ServiceProvider
-                .GetRequiredService<OnebillDbMigrationService>()
+                .GetRequiredService<IVPDbMigrationService>()
                 .MigrateAsync(cancellationToken);
 
             await application.ShutdownAsync();
