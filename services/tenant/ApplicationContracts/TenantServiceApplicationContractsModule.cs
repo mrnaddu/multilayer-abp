@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Application;
+﻿using IVP.TenantService.DomainShared;
+using Volo.Abp.Application;
 using Volo.Abp.Authorization;
 using Volo.Abp.Modularity;
 using Volo.Abp.TenantManagement;

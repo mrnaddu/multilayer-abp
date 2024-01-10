@@ -1,4 +1,6 @@
-﻿using Volo.Abp.Application;
+﻿using IVP.TenantService.ApplicationContracts;
+using IVP.TenantService.Domain;
+using Volo.Abp.Application;
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.TenantManagement;

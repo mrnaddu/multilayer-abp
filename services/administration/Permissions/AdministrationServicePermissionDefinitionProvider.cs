@@ -1,4 +1,5 @@
-﻿using Volo.Abp.Authorization.Permissions;
+﻿using IVP.AdministrationService.Localization;
+using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
 namespace IVP.AdministrationService.Permissions;

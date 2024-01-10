@@ -52,9 +52,6 @@
 		<PackageReference Include="Volo.Abp.BackgroundJobs.EntityFrameworkCore" Version="8.0.1" />
 		<PackageReference Include="Volo.Abp.Http.Client" Version="8.0.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="8.0.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
-		<PackageReference Include="Volo.Abp.Autofac" Version="8.0.1" />
 		<PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="8.0.1" />
 		<PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="8.0.1" />
 	</ItemGroup>
@@ -64,6 +61,10 @@
 		<Content Remove="Logs\**" />
 		<EmbeddedResource Remove="Logs\**" />
 		<None Remove="Logs\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\shared\IVP.Shared.Hosting\IVP.Shared.Hosting.csproj" />
 	</ItemGroup>
 
 </Project>

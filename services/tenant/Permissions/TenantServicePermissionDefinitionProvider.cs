@@ -1,4 +1,6 @@
-﻿using Volo.Abp.Authorization.Permissions;
+﻿using IVP.TenantService.Localization;
+using Volo.Abp.Authorization.Permissions;
+using Volo.Abp.Localization;
 
 namespace IVP.TenantService.Permissions;
 

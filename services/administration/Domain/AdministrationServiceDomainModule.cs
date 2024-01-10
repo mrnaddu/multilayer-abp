@@ -6,6 +6,7 @@ using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.PermissionManagement.OpenIddict;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
+using IVP.AdministrationService.DomainShared;
 
 namespace IVP.AdministrationService.Domain;
 

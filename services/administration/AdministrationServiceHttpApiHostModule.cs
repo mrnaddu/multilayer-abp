@@ -1,6 +1,8 @@
 ﻿using IVP.AdministrationService.Application;
 using IVP.AdministrationService.EntityFrameworkCore;
 using IVP.AdministrationService.HttpApi;
+using IVP.Shared.Hosting;
+using Microsoft.AspNetCore.Cors;
 using Volo.Abp;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
@@ -8,7 +10,7 @@ using Volo.Abp.Modularity;
 namespace IVP.AdministrationService;
 
 [DependsOn(
-    typeof(OnebillSharedHostingMicroserviceModule),
+    typeof(IVPSharedHostingMicroserviceModule),
     typeof(AdministrationServiceApplicationModule),
     typeof(AdministrationServiceEntityFrameworkCoreModule),
     typeof(AdministrationServiceHttpApiModule),

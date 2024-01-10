@@ -1,5 +1,5 @@
-﻿using Volo.Abp.Application.Services;
-using Volo.Abp.Localization;
+﻿using IVP.TenantService.Localization;
+using Volo.Abp.Application.Services;
 
 namespace IVP.TenantService.Application;
 

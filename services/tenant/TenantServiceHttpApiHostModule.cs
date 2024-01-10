@@ -1,13 +1,16 @@
-﻿using IVP.TenantService.Application;
+﻿using IVP.AdministrationService.EntityFrameworkCore;
+using IVP.Shared.Hosting;
+using IVP.TenantService.Application;
 using IVP.TenantService.EntityFrameworkCore;
 using IVP.TenantService.HttpApi;
+using Microsoft.AspNetCore.Cors;
 using Volo.Abp;
 using Volo.Abp.Modularity;
 
 namespace IVP.TenantService;
 
 [DependsOn(
-    typeof(OnebillSharedHostingMicroserviceModule),
+    typeof(IVPSharedHostingMicroserviceModule),
     typeof(TenantServiceApplicationModule),
     typeof(TenantServiceEntityFrameworkCoreModule),
     typeof(TenantServiceHttpApiModule),
