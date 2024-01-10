@@ -8,7 +8,8 @@ public class AuthServerDbContextFactory : IDesignTimeDbContextFactory<AuthServer
     public AuthServerDbContext CreateDbContext(string[] args)
     {
         var configuration = BuildConfiguration();
-        var connectionString = configuration.GetConnectionString("AuthServer");
+
+        var connectionString = configuration.GetConnectionString(AuthServerDbProperties.ConnectionStringName);
 
         var builder = new DbContextOptionsBuilder<AuthServerDbContext>()
             .UseNpgsql(connectionString);

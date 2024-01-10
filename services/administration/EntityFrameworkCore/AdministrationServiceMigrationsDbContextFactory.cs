@@ -19,7 +19,7 @@ public class AdministrationServiceMigrationsDbContextFactory : IDesignTimeDbCont
 
     private static IConfigurationRoot BuildConfiguration()
     {
-        var path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.FullName, "IVP.AdministrationService");
+        var path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.FullName,"IVP.AdministrationService");
 
         var builder = new ConfigurationBuilder()
             .SetBasePath(path)
