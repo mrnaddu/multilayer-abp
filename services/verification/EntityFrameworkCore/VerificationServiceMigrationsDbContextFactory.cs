@@ -8,7 +8,11 @@ public class VerificationServiceMigrationsDbContextFactory : IDesignTimeDbContex
 {
     public VerificationServiceDbContext CreateDbContext(string[] args)
     {
+        // https://www.npgsql.org/efcore/release-notes/6.0.html#opting-out-of-the-new-timestamp-mapping-logic
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
         var configuration = BuildConfiguration();
+
         var connectionString = configuration.GetConnectionString(VerificationServiceDbProperties.ConnectionStringName);
 
         var builder = new DbContextOptionsBuilder<VerificationServiceDbContext>()
@@ -19,10 +23,8 @@ public class VerificationServiceMigrationsDbContextFactory : IDesignTimeDbContex
 
     private static IConfigurationRoot BuildConfiguration()
     {
-        var path = Path.Combine(Directory.GetParent(Directory.GetCurrentDirectory())?.FullName, $"IVP.VerificationService");
-
         var builder = new ConfigurationBuilder()
-            .SetBasePath(path)
+            .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json", optional: false);
 
         return builder.Build();
