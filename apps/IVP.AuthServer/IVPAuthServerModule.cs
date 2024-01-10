@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Cors;
+﻿using IVP.AdministrationService.EntityFrameworkCore;
+using IVP.TenantService.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -18,14 +20,14 @@ using Volo.Abp.AspNetCore.Mvc.UI.Theme.LeptonXLite.Bundling;
 using Volo.Abp.AspNetCore.Mvc.UI.Theme.Shared;
 using Volo.Abp.AspNetCore.Serilog;
 using Volo.Abp.Auditing;
-using Volo.Abp.AuditLogging.EntityFrameworkCore;
+using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
+using Volo.Abp.AutoMapper;
 using Volo.Abp.Caching;
 using Volo.Abp.Caching.StackExchangeRedis;
+using Volo.Abp.Domain;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.PostgreSql;
-using Volo.Abp.FeatureManagement;
-using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Http.Client;
 using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
@@ -33,15 +35,11 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement;
-using Volo.Abp.PermissionManagement.EntityFrameworkCore;
-using Volo.Abp.PermissionManagement.Identity;
 using Volo.Abp.Security.Claims;
-using Volo.Abp.SettingManagement;
-using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.Timing;
 using Volo.Abp.UI.Navigation.Urls;
+using Volo.Abp.Validation;
 
 namespace IVP.AuthServer;
 
@@ -50,31 +48,35 @@ namespace IVP.AuthServer;
     typeof(AbpAccountApplicationModule),
     typeof(AbpAccountHttpApiModule),
     typeof(AbpAspNetCoreMvcModule),
-    typeof(AbpAuditLoggingEntityFrameworkCoreModule),
     typeof(AbpAutofacModule),
+    typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpCachingStackExchangeRedisModule),
     typeof(AbpEntityFrameworkCorePostgreSqlModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpIdentityApplicationModule),
-    typeof(AbpIdentityHttpApiModule),
-    typeof(AbpOpenIddictEntityFrameworkCoreModule),
-    typeof(AbpPermissionManagementDomainIdentityModule),
-    typeof(AbpPermissionManagementEntityFrameworkCoreModule),
-    typeof(AbpPermissionManagementApplicationModule),
     typeof(AbpAspNetCoreMvcUiLeptonXLiteThemeModule),
-    typeof(AbpSettingManagementEntityFrameworkCoreModule),
-    typeof(AbpSettingManagementApplicationModule),
-    typeof(AbpSettingManagementHttpApiModule),
-    typeof(AbpFeatureManagementEntityFrameworkCoreModule),
-    typeof(AbpFeatureManagementApplicationModule),
-    typeof(AbpAspNetCoreSerilogModule),
     typeof(AbpSwashbuckleModule),
+    typeof(AbpDddApplicationModule),
+    typeof(AbpAutoMapperModule),
+    typeof(AbpIdentityApplicationModule),
+    typeof(AbpAccountApplicationModule),
     typeof(AbpDddApplicationContractsModule),
-    typeof(AbpPermissionManagementApplicationContractsModule),
-    typeof(AbpSettingManagementApplicationContractsModule),
-    typeof(AbpFeatureManagementApplicationContractsModule),
+    typeof(AbpAuthorizationModule),
     typeof(AbpAccountApplicationContractsModule),
-    typeof(AbpIdentityApplicationContractsModule)
+    typeof(AbpIdentityApplicationContractsModule),
+    typeof(AbpDddDomainModule),
+    typeof(AbpIdentityDomainModule),
+    typeof(AbpOpenIddictDomainModule),
+    typeof(AbpValidationModule),
+    typeof(AbpIdentityDomainSharedModule),
+    typeof(AbpOpenIddictDomainSharedModule),
+    typeof(AbpEntityFrameworkCoreModule),
+    typeof(AbpIdentityEntityFrameworkCoreModule),
+    typeof(AbpOpenIddictEntityFrameworkCoreModule),
+    typeof(AbpAspNetCoreMvcModule),
+    typeof(AbpAccountHttpApiModule),
+    typeof(AbpIdentityHttpApiModule),
+    typeof(AbpHttpClientModule),
+    typeof(TenantServiceEntityFrameworkCoreModule),
+    typeof(AdministrationServiceEntityFrameworkCoreModule)
 )]
 public class IVPAuthServerModule : AbpModule
 {

@@ -54,5 +54,10 @@
 		<EmbeddedResource Remove="Logs\**" />
 		<None Remove="Logs\**" />
 	</ItemGroup>
+	
+	<ItemGroup>
+	  <ProjectReference Include="..\..\services\administration\IVP.AdministrationService.csproj" />
+	  <ProjectReference Include="..\..\services\tenant\IVP.TenantService.csproj" />
+	</ItemGroup>
 
 </Project>
