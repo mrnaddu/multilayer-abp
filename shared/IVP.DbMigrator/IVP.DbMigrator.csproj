@@ -4,7 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
 	<ItemGroup>
@@ -35,6 +35,13 @@
 		<Content Remove="Logs\**" />
 		<EmbeddedResource Remove="Logs\**" />
 		<None Remove="Logs\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\apps\IVP.AuthServer\IVP.AuthServer.csproj" />
+	  <ProjectReference Include="..\..\services\administration\IVP.AdministrationService.csproj" />
+	  <ProjectReference Include="..\..\services\tenant\IVP.TenantService.csproj" />
+	  <ProjectReference Include="..\..\services\verification\IVP.VerificationService.csproj" />
 	</ItemGroup>
 
 </Project>
