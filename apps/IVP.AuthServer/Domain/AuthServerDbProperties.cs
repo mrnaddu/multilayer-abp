@@ -6,5 +6,5 @@ public static class AuthServerDbProperties
 
     public static string DbSchema { get; set; } = null;
 
-    public const string ConnectionStringName = "AuthServer";
+    public const string ConnectionStringName = "Default";
 }
