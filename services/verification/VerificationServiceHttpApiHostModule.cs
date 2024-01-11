@@ -1,4 +1,7 @@
-﻿using IVP.Shared.Hosting;
+﻿using IVP.AdministrationService.EntityFrameworkCore;
+using IVP.AuthServer.EntityFrameworkCore;
+using IVP.Shared.Hosting;
+using IVP.TenantService.EntityFrameworkCore;
 using IVP.VerificationService.Application;
 using IVP.VerificationService.EntityFrameworkCore;
 using IVP.VerificationService.HttpApi;
@@ -12,7 +15,10 @@ namespace IVP.VerificationService;
     typeof(IVPSharedHostingMicroserviceModule),
     typeof(VerificationServiceApplicationModule),
     typeof(VerificationServiceEntityFrameworkCoreModule),
-    typeof(VerificationServiceHttpApiModule)
+    typeof(VerificationServiceHttpApiModule),
+    typeof(AdministrationServiceEntityFrameworkCoreModule),
+    typeof(AuthServerEntityFrameworkCoreModule),
+    typeof(TenantServiceEntityFrameworkCoreModule)
 )]
 public class VerificationServiceHttpApiHostModule : AbpModule
 {

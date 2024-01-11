@@ -46,7 +46,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\apps\IVP.AuthServer\IVP.AuthServer.csproj" />
 	  <ProjectReference Include="..\..\shared\IVP.Shared.Hosting\IVP.Shared.Hosting.csproj" />
+	  <ProjectReference Include="..\administration\IVP.AdministrationService.csproj" />
+	  <ProjectReference Include="..\tenant\IVP.TenantService.csproj" />
 	</ItemGroup>
 
 </Project>

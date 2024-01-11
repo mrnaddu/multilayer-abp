@@ -24,4 +24,5 @@ namespace IVP.DbMigrator;
 )]
 public class IVPDbMigratorModule : AbpModule
 {
+
 }

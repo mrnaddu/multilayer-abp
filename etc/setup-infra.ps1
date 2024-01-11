@@ -2,7 +2,6 @@ $requiredServices = @(
     'postgres-db',
     'rabbitmq',
     'seq',
-    'mongoDb',
     'redis' 
 )
 	
