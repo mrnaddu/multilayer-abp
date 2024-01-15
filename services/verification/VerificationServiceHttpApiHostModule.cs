@@ -91,7 +91,7 @@ public class VerificationServiceHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
-            options.OAuthClientId(configuration["AuthServer:SwaggerClientSecret"]);
+            options.OAuthClientSecret(configuration["AuthServer:SwaggerClientSecret"]);
             options.OAuthScopes("VerificationService");
         });
 

@@ -37,6 +37,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
+using Volo.Abp.MultiTenancy;
 using Volo.Abp.OpenIddict;
 using Volo.Abp.OpenIddict.EntityFrameworkCore;
 using Volo.Abp.Security.Claims;
@@ -135,6 +136,11 @@ public class IVPAuthServerModule : AbpModule
 
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+
+        Configure<AbpMultiTenancyOptions>(options =>
+        {
+            options.IsEnabled = true;
+        });
 
         Configure<AbpBundlingOptions>(options =>
         {
@@ -278,6 +284,7 @@ public class IVPAuthServerModule : AbpModule
         app.UseAuthentication();
         app.UseHttpsRedirection();
         app.UseAbpOpenIddictValidation();
+        app.UseMultiTenancy();
         app.UseUnitOfWork();
         app.UseAuthentication();
         app.UseAuthorization();
