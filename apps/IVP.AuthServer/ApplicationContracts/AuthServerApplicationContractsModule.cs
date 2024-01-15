@@ -13,7 +13,7 @@ namespace IVP.AuthServer.ApplicationContracts;
     typeof(AbpAuthorizationModule),
     typeof(AbpAccountApplicationContractsModule),
     typeof(AbpIdentityApplicationContractsModule)
-    )]
+)]
 public class AuthServerApplicationContractsModule : AbpModule
 {
 }

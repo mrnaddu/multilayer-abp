@@ -17,7 +17,7 @@ namespace IVP.AdministrationService.Application;
     typeof(AbpPermissionManagementApplicationModule),
     typeof(AbpSettingManagementApplicationModule),
     typeof(AbpFeatureManagementApplicationModule)
-    )]
+)]
 public class AdministrationServiceApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

@@ -11,7 +11,7 @@ namespace IVP.TenantService.ApplicationContracts;
     typeof(AbpDddApplicationContractsModule),
     typeof(AbpAuthorizationModule),
     typeof(AbpTenantManagementApplicationContractsModule)
-    )]
+)]
 public class TenantServiceApplicationContractsModule : AbpModule
 {
 

@@ -16,7 +16,7 @@ namespace IVP.AdministrationService.HttpApi;
     typeof(AbpPermissionManagementHttpApiModule),
     typeof(AbpSettingManagementHttpApiModule),
     typeof(AbpFeatureManagementHttpApiModule)
-    )]
+)]
 public class AdministrationServiceHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

@@ -12,7 +12,7 @@ namespace IVP.TenantService.HttpApi;
     typeof(TenantServiceApplicationContractsModule),
     typeof(AbpAspNetCoreMvcModule),
     typeof(AbpTenantManagementHttpApiModule)
-    )]
+)]
 public class TenantServiceHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

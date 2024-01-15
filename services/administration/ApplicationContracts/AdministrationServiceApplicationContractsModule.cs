@@ -15,7 +15,7 @@ namespace IVP.AdministrationService.ApplicationContracts;
     typeof(AbpPermissionManagementApplicationContractsModule),
     typeof(AbpSettingManagementApplicationContractsModule),
     typeof(AbpFeatureManagementApplicationContractsModule)
-    )]
+)]
 public class AdministrationServiceApplicationContractsModule : AbpModule
 {
 

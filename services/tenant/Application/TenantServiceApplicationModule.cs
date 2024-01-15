@@ -13,7 +13,7 @@ namespace IVP.TenantService.Application;
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule),
     typeof(AbpTenantManagementApplicationModule)
-    )]
+)]
 public class TenantServiceApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
