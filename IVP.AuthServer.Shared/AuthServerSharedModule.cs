@@ -1,22 +1,15 @@
-﻿using IVP.AdministrationService.Shared;
-using IVP.AuthServer.Domain;
-using IVP.TenantService.Shared;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
 
-namespace IVP.AuthServer.EntityFrameworkCore;
+namespace IVP.AuthServer.Shared;
 
 [DependsOn(
-    typeof(AuthServerDomainModule),
     typeof(AbpEntityFrameworkCoreModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpOpenIddictEntityFrameworkCoreModule),
-    typeof(TenantServiceSharedModule),
-    typeof(AdministrationServiceSharedModule)
+    typeof(AbpIdentityEntityFrameworkCoreModule)
 )]
-public class AuthServerEntityFrameworkCoreModule : AbpModule
+public class AuthServerSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

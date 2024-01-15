@@ -56,8 +56,9 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	  <ProjectReference Include="..\..\services\administration\IVP.AdministrationService.csproj" />
-	  <ProjectReference Include="..\..\services\tenant\IVP.TenantService.csproj" />
+	  <ProjectReference Include="..\..\services\verification\IVP.VerificationService.csproj" />
+	  <ProjectReference Include="..\..\shared\IVP.AdministrationService.Shared\IVP.AdministrationService.Shared.csproj" />
+	  <ProjectReference Include="..\..\shared\IVP.TenantService.Shared\IVP.TenantService.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -1,4 +1,7 @@
-﻿using IVP.VerificationService.Domain;
+﻿using IVP.AdministrationService.Shared;
+using IVP.AuthServer.Shared;
+using IVP.TenantService.Shared;
+using IVP.VerificationService.Domain;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
@@ -6,7 +9,10 @@ namespace IVP.VerificationService.EntityFrameworkCore;
 
 [DependsOn(
     typeof(VerificationServiceDomainModule),
-    typeof(AbpEntityFrameworkCoreModule)
+    typeof(AbpEntityFrameworkCoreModule),
+    typeof(TenantServiceSharedModule),
+    typeof(AdministrationServiceSharedModule),
+    typeof(AuthServerSharedModule)
 )]
 public class VerificationServiceEntityFrameworkCoreModule : AbpModule
 {

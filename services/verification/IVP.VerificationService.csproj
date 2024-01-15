@@ -51,9 +51,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\..\IVP.AuthServer.Shared\IVP.AuthServer.Shared.csproj" />
+	  <ProjectReference Include="..\..\shared\IVP.AdministrationService.Shared\IVP.AdministrationService.Shared.csproj" />
 	  <ProjectReference Include="..\..\shared\IVP.Shared.Hosting\IVP.Shared.Hosting.csproj" />
-	  <ProjectReference Include="..\administration\IVP.AdministrationService.csproj" />
-	  <ProjectReference Include="..\tenant\IVP.TenantService.csproj" />
+	  <ProjectReference Include="..\..\shared\IVP.TenantService.Shared\IVP.TenantService.Shared.csproj" />
 	</ItemGroup>
 
 </Project>

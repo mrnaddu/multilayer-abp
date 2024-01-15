@@ -1,4 +1,6 @@
 ﻿using IVP.AdministrationService.Domain;
+using IVP.AuthServer.Shared;
+using IVP.TenantService.Shared;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.FeatureManagement.EntityFrameworkCore;
@@ -14,7 +16,9 @@ namespace IVP.AdministrationService.EntityFrameworkCore;
     typeof(AbpPermissionManagementEntityFrameworkCoreModule),
     typeof(AbpAuditLoggingEntityFrameworkCoreModule),
     typeof(AbpFeatureManagementEntityFrameworkCoreModule),
-    typeof(AbpSettingManagementEntityFrameworkCoreModule)
+    typeof(AbpSettingManagementEntityFrameworkCoreModule),
+    typeof(TenantServiceSharedModule),
+    typeof(AuthServerSharedModule)
 )]
 public class AdministrationServiceEntityFrameworkCoreModule : AbpModule
 {

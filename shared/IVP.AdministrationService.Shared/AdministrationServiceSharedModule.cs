@@ -1,22 +1,22 @@
-﻿using IVP.AdministrationService.Shared;
-using IVP.AuthServer.Domain;
-using IVP.TenantService.Shared;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore;
-using Volo.Abp.Identity.EntityFrameworkCore;
+using Volo.Abp.FeatureManagement.EntityFrameworkCore;
 using Volo.Abp.Modularity;
-using Volo.Abp.OpenIddict.EntityFrameworkCore;
+using Volo.Abp.PermissionManagement.EntityFrameworkCore;
+using Volo.Abp.SettingManagement.EntityFrameworkCore;
 
-namespace IVP.AuthServer.EntityFrameworkCore;
+namespace IVP.AdministrationService.Shared;
+
 
 [DependsOn(
-    typeof(AuthServerDomainModule),
     typeof(AbpEntityFrameworkCoreModule),
-    typeof(AbpIdentityEntityFrameworkCoreModule),
-    typeof(AbpOpenIddictEntityFrameworkCoreModule),
-    typeof(TenantServiceSharedModule),
-    typeof(AdministrationServiceSharedModule)
+    typeof(AbpPermissionManagementEntityFrameworkCoreModule),
+    typeof(AbpAuditLoggingEntityFrameworkCoreModule),
+    typeof(AbpFeatureManagementEntityFrameworkCoreModule),
+    typeof(AbpSettingManagementEntityFrameworkCoreModule)
 )]
-public class AuthServerEntityFrameworkCoreModule : AbpModule
+public class AdministrationServiceSharedModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {
@@ -26,7 +26,7 @@ public class AuthServerEntityFrameworkCoreModule : AbpModule
 
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
-        context.Services.AddAbpDbContext<AuthServerDbContext>(options =>
+        context.Services.AddAbpDbContext<AdministrationServiceDbContext>(options =>
         {
             /* Add custom repositories here. Example:
              * options.AddRepository<Question, EfCoreQuestionRepository>();

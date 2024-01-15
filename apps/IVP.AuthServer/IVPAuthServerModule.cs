@@ -1,9 +1,7 @@
-﻿using IVP.AdministrationService.EntityFrameworkCore;
-using IVP.AuthServer.Application;
+﻿using IVP.AuthServer.Application;
 using IVP.AuthServer.EntityFrameworkCore;
 using IVP.AuthServer.HttpApi;
 using IVP.Shared.Hosting;
-using IVP.TenantService.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Extensions.DependencyInjection;
@@ -83,9 +81,7 @@ namespace IVP.AuthServer;
     typeof(IVPSharedHostingMicroserviceModule),
     typeof(AuthServerApplicationModule),
     typeof(AuthServerEntityFrameworkCoreModule),
-    typeof(AuthServerHttpApiModule),
-    typeof(TenantServiceEntityFrameworkCoreModule),
-    typeof(AdministrationServiceEntityFrameworkCoreModule)
+    typeof(AuthServerHttpApiModule)
 )]
 public class IVPAuthServerModule : AbpModule
 {

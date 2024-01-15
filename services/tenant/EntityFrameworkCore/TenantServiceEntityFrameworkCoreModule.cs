@@ -1,4 +1,6 @@
-﻿using IVP.TenantService.Domain;
+﻿using IVP.AdministrationService.Shared;
+using IVP.AuthServer.Shared;
+using IVP.TenantService.Domain;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
@@ -8,7 +10,9 @@ namespace IVP.TenantService.EntityFrameworkCore;
 [DependsOn(
     typeof(TenantServiceDomainModule),
     typeof(AbpEntityFrameworkCoreModule),
-    typeof(AbpTenantManagementEntityFrameworkCoreModule)
+    typeof(AbpTenantManagementEntityFrameworkCoreModule),
+    typeof(AdministrationServiceSharedModule),
+    typeof(AuthServerSharedModule)
 )]
 public class TenantServiceEntityFrameworkCoreModule : AbpModule
 {

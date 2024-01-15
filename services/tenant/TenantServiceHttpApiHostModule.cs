@@ -1,4 +1,4 @@
-﻿using IVP.AdministrationService.EntityFrameworkCore;
+﻿using IVP.AdministrationService.Shared;
 using IVP.Shared.Hosting;
 using IVP.TenantService.Application;
 using IVP.TenantService.EntityFrameworkCore;
@@ -13,8 +13,7 @@ namespace IVP.TenantService;
     typeof(IVPSharedHostingMicroserviceModule),
     typeof(TenantServiceApplicationModule),
     typeof(TenantServiceEntityFrameworkCoreModule),
-    typeof(TenantServiceHttpApiModule),
-    typeof(AdministrationServiceEntityFrameworkCoreModule)
+    typeof(TenantServiceHttpApiModule)
 )]
 public class TenantServiceHttpApiHostModule : AbpModule
 {
