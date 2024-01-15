@@ -9,6 +9,7 @@ using System.Net;
 using Volo.Abp;
 using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
+using Volo.Abp.SettingManagement;
 
 namespace IVP.AdministrationService;
 
@@ -64,6 +65,8 @@ public class AdministrationServiceHttpApiHostModule : AbpModule
     {
         var app = context.GetApplicationBuilder();
         var env = context.GetEnvironment();
+
+        context.ServiceProvider.GetRequiredService<SettingManager>();
 
         if (!env.IsDevelopment())
         {
