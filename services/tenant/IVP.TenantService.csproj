@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -44,7 +44,6 @@
 		<PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="8.0.1" />
 		<PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="8.0.1" />
 		<PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="8.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
