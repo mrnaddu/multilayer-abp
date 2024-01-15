@@ -28,9 +28,11 @@ public class AdministrationServiceHttpApiHostModule : AbpModule
         SwaggerConfigurationHelper.ConfigureWithAuth(
            context: context,
            authority: configuration["AuthServer:Authority"],
-           scopes: new Dictionary<string, string> {
+           scopes: new Dictionary<string, string> 
+           {
                 {"AdministrationService", "AdministrationService API"}
-                    },
+                    
+           },
            apiTitle: "AdministrationService API"
        );
 
@@ -87,6 +89,7 @@ public class AdministrationServiceHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+            options.OAuthClientId(configuration["AuthServer:SwaggerClientSecret"]);
             options.OAuthScopes("AdministrationService");
         });
         app.UseAuditing();

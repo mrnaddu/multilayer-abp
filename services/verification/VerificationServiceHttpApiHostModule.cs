@@ -32,9 +32,11 @@ public class VerificationServiceHttpApiHostModule : AbpModule
         SwaggerConfigurationHelper.ConfigureWithAuth(
            context: context,
            authority: configuration["AuthServer:Authority"],
-           scopes: new Dictionary<string, string> {
+           scopes: new Dictionary<string, string>
+           {
                     {"VerificationService", "VerificationService API"}
-                    },
+                   
+           },
            apiTitle: "VerificationService API"
        );
 
@@ -89,6 +91,7 @@ public class VerificationServiceHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+            options.OAuthClientId(configuration["AuthServer:SwaggerClientSecret"]);
             options.OAuthScopes("VerificationService");
         });
 

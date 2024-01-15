@@ -28,9 +28,11 @@ public class TenantServiceHttpApiHostModule : AbpModule
         SwaggerConfigurationHelper.ConfigureWithAuth(
            context: context,
            authority: configuration["AuthServer:Authority"],
-           scopes: new Dictionary<string, string> {
+           scopes: new Dictionary<string, string>
+           {
                 {"TenantService", "TenantService API"}
-                    },
+                    
+           },
            apiTitle: "TenantService API"
        );
 
@@ -84,6 +86,7 @@ public class TenantServiceHttpApiHostModule : AbpModule
 
             var configuration = context.GetConfiguration();
             options.OAuthClientId(configuration["AuthServer:SwaggerClientId"]);
+            options.OAuthClientId(configuration["AuthServer:SwaggerClientSecret"]);
             options.OAuthScopes("TenantService");
         });
         app.UseAuditing();
