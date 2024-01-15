@@ -15,7 +15,7 @@ namespace IVP.AdministrationService;
     typeof(AdministrationServiceEntityFrameworkCoreModule),
     typeof(AdministrationServiceHttpApiModule),
     typeof(AbpIdentityHttpApiClientModule)
-    )]
+)]
 public class AdministrationServiceHttpApiHostModule : AbpModule
 {
 
