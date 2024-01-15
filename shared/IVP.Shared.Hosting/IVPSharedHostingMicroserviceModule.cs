@@ -11,6 +11,7 @@ using Volo.Abp.EventBus.RabbitMq;
 using Volo.Abp.Modularity;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Swashbuckle;
+using Volo.Abp.Timing;
 
 namespace IVP.Shared.Hosting;
 
@@ -45,6 +46,11 @@ public class IVPSharedHostingMicroserviceModule : AbpModule
             var redis = ConnectionMultiplexer.Connect(configuration["Redis:Configuration"]);
             dataProtectionBuilder.PersistKeysToStackExchangeRedis(redis, "IVP-Protection-Keys");
         }
+
+        Configure<AbpClockOptions>(options =>
+        {
+            options.Kind = DateTimeKind.Utc;
+        });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)

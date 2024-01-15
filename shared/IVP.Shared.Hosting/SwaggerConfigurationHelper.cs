@@ -30,5 +30,7 @@ public static class SwaggerConfigurationHelper
                 options.DocInclusionPredicate((docName, description) => true);
                 options.CustomSchemaIds(type => type.FullName);
             });
+
     }
+
 }
