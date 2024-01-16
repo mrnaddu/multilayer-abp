@@ -70,7 +70,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\IVP.AuthServer.Shared\IVP.AuthServer.Shared.csproj" />
+	  <ProjectReference Include="..\..\shared\IVP.AuthServer.Shared\IVP.AuthServer.Shared.csproj" />
 	  <ProjectReference Include="..\..\shared\IVP.Shared.Hosting\IVP.Shared.Hosting.csproj" />
 	  <ProjectReference Include="..\..\shared\IVP.TenantService.Shared\IVP.TenantService.Shared.csproj" />
 	</ItemGroup>
