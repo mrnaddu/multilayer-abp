@@ -273,10 +273,13 @@ public class IVPAuthServerModule : AbpModule
                 var basePath = "/auth";
                 options.PreSerializeFilters.Add((swaggerDoc, httpReq) =>
                 {
-                    swaggerDoc.Servers = new List<OpenApiServer> { new() 
-                    { 
-                        Url = $"https://{httpReq.Host.Value}{basePath}" 
-                    } };
+                    swaggerDoc.Servers = new List<OpenApiServer>
+                    {
+                        new()
+                        {
+                            Url = $"https://{httpReq.Host.Value}{basePath}"
+                        }
+                    };
                 });
             }
         });
