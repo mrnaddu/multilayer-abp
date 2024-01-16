@@ -10,4 +10,5 @@ namespace IVP.VerificationService.Domain;
 )]
 public class VerificationServiceDomainModule : AbpModule
 {
+
 }

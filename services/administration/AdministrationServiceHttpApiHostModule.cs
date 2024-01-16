@@ -104,9 +104,9 @@ public class AdministrationServiceHttpApiHostModule : AbpModule
                     { 
                         new() 
                         {
-                            Url = $"https://{httpReq.Host.Value
-                        }{basePath}" 
-                        } };
+                            Url = $"https://{httpReq.Host.Value}{basePath}" 
+                        } 
+                    };
                 });
             }
         });

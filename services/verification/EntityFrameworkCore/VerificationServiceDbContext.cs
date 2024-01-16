@@ -7,11 +7,6 @@ public class VerificationServiceDbContext : AbpDbContext<VerificationServiceDbCo
     , IVerificationServiceDbContext
 {
 
-    /* Add DbSet for each Aggregate Root here. Example:
-    * public DbSet<Question> Questions { get; set; }
-     */
-
-
     public VerificationServiceDbContext(DbContextOptions<VerificationServiceDbContext> options) : base(options)
     {
     }

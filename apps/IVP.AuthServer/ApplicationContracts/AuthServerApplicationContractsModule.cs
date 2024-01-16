@@ -16,4 +16,5 @@ namespace IVP.AuthServer.ApplicationContracts;
 )]
 public class AuthServerApplicationContractsModule : AbpModule
 {
+
 }

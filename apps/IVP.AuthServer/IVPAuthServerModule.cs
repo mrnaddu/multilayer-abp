@@ -192,7 +192,6 @@ public class IVPAuthServerModule : AbpModule
 
         Configure<AbpAuditingOptions>(options =>
         {
-            //options.IsEnabledForGetRequests = true;
             options.ApplicationName = "AuthServer";
         });
 

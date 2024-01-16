@@ -7,7 +7,5 @@ namespace IVP.VerificationService.EntityFrameworkCore;
 [ConnectionStringName(VerificationServiceDbProperties.ConnectionStringName)]
 public interface IVerificationServiceDbContext : IEfCoreDbContext
 {
-    /* Add DbSet for each Aggregate Root here. Example:
-     * DbSet<Question> Questions { get; }
-     */
+
 }

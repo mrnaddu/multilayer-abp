@@ -12,4 +12,5 @@ namespace IVP.VerificationService.ApplicationContracts;
 )]
 public class VerificationServiceApplicationContractsModule : AbpModule
 {
+
 }

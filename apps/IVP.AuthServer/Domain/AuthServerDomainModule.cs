@@ -14,4 +14,5 @@ namespace IVP.AuthServer.Domain;
 )]
 public class AuthServerDomainModule : AbpModule
 {
+
 }

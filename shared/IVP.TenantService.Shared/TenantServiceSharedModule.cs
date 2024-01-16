@@ -21,16 +21,11 @@ public class TenantServiceSharedModule : AbpModule
     {
         context.Services.AddAbpDbContext<TenantServiceDbContext>(options =>
         {
-            /* Add custom repositories here. Example:
-             * options.AddRepository<Question, EfCoreQuestionRepository>();
-             */
             options.AddDefaultRepositories(includeAllEntities: true);
         });
 
         Configure<AbpDbContextOptions>(options =>
         {
-            /* The main point to change your DBMS.
-             * See also IdentityServiceMigrationsDbContextFactory for EF Core tooling. */
             options.UseNpgsql();
         });
     }

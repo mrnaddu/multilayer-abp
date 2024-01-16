@@ -1,6 +1,5 @@
 ﻿using Volo.Abp.DependencyInjection;
 using Volo.Abp.EventBus.Distributed;
-using Volo.Abp.Guids;
 using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
 
@@ -9,18 +8,15 @@ namespace IVP.AuthServer.EventHandler;
 public class TenantCreatedEventHandler : IDistributedEventHandler<TenantCreatedEto>, ITransientDependency
 {
     private readonly ICurrentTenant _currentTenant;
-    protected readonly IGuidGenerator _guidGenerator;
     private readonly ILogger<TenantCreatedEventHandler> _logger;
     private readonly IIdentityDataSeeder _identityDataSeeder;
 
-    public TenantCreatedEventHandler(ICurrentTenant currentTenant,
-        IGuidGenerator guidGenerator,
-        IdentityUserManager identityUserManager,
+    public TenantCreatedEventHandler(
+        ICurrentTenant currentTenant,
         IIdentityDataSeeder identityDataSeeder,
         ILogger<TenantCreatedEventHandler> logger)
     {
         _currentTenant = currentTenant;
-        _guidGenerator = guidGenerator;
         _identityDataSeeder = identityDataSeeder;
         _logger = logger;
     }

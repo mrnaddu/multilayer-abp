@@ -14,16 +14,13 @@ public class TenantServiceDbContext : AbpDbContext<TenantServiceDbContext>,
     ITenantManagementDbContext,
     ITenantServiceDbContext
 {
-    /* Add DbSet for each Aggregate Root here. Example:
-     * public DbSet<Question> Questions { get; set; }
-     */
-
     public TenantServiceDbContext(DbContextOptions<TenantServiceDbContext> options)
         : base(options)
     {
 
     }
 
+    // Tenants
     public DbSet<Tenant> Tenants { get; set; }
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 

@@ -26,25 +26,28 @@ public class AdministrationServiceDbContext : AbpDbContext<AdministrationService
     IFeatureManagementDbContext,
     IAuditLoggingDbContext
 {
-    /* Add DbSet for each Aggregate Root here. Example:
-     * public DbSet<Question> Questions { get; set; }
-     */
-
     public AdministrationServiceDbContext(DbContextOptions<AdministrationServiceDbContext> options)
         : base(options)
     {
 
     }
 
+    // Permissions
     public DbSet<PermissionGroupDefinitionRecord> PermissionGroups { get; set; }
     public DbSet<PermissionDefinitionRecord> Permissions { get; set; }
     public DbSet<PermissionGrant> PermissionGrants { get; set; }
+
+    // Features
     public DbSet<FeatureGroupDefinitionRecord> FeatureGroups { get; set; }
     public DbSet<FeatureDefinitionRecord> Features { get; set; }
     public DbSet<FeatureValue> FeatureValues { get; set; }
+
+    // Settings
     public DbSet<Setting> Settings { get; set; }
-    public DbSet<AuditLog> AuditLogs { get; set; }
     public DbSet<SettingDefinitionRecord> SettingDefinitionRecords { get; set; }
+
+    // AuditLogs
+    public DbSet<AuditLog> AuditLogs { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
