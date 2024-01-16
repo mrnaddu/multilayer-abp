@@ -33,7 +33,6 @@ public class Program
 
         try
         {
-            Log.Information("Starting web .");
             var builder = WebApplication.CreateBuilder(args);
             builder.Host.AddAppSettingsSecretsJson()
                 .UseAutofac()
@@ -48,7 +47,7 @@ public class Program
             var app = builder.Build();
             await app.InitializeApplicationAsync();
 
-            Log.Information("Starting web host .");
+            Log.Information("Starting web .");
             await app.RunAsync();
             return 0;
         }
